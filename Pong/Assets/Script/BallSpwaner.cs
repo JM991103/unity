@@ -1,21 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BallSpwaner : MonoBehaviour
 {
-    public GameObject Ball;
+    public GameObject BallPrefab;
+    bool isDead = false;
+
+    IEnumerator BallSpawn;
+
+    float minY = -3.8f;
+    float maxY = 3.8f;
+
+    public Action<bool> trueDead;
 
     private void Awake()
     {
-        Ball = new GameObject();
+        BallSpawn = ballSpawner();
     }
 
     private void Start()
     {
-        GameObject obj = Instantiate(Ball, transform.position, Quaternion.identity);
-        obj.transform.Translate(0, Random.Range(4.5f, -4.5f), 0);
-
+        StartCoroutine(BallSpawn);
+        KillZone kill = GameObject.FindObjectOfType<KillZone>();
+        kill.OnLifeDie += falseDead;
     }
 
+    IEnumerator ballSpawner()
+    {
+        while (true)
+        {
+
+            if (!isDead)
+            {
+                GameObject obj = Instantiate(BallPrefab, transform.position, Quaternion.identity);
+                obj.transform.Translate(0.0f, UnityEngine.Random.Range(minY, maxY), 0.0f);
+                isDead = true;
+            }
+            yield return new WaitForSeconds(3.0f);
+        }
+    }
+
+    void falseDead(bool value)
+    {
+        isDead = value;
+    }
 }

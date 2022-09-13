@@ -16,6 +16,7 @@ public class Ball : MonoBehaviour
     {
         dir = Random.insideUnitCircle;
         dir = dir.normalized;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

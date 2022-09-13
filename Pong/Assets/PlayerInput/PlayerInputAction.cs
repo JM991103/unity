@@ -35,6 +35,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""cpu"",
+                    ""type"": ""Value"",
+                    ""id"": ""5314572a-05e5-40fa-9470-28cc35a28144"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -70,6 +79,39 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""18e4de03-491e-4c50-9a8f-004c1d0285d8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""cpu"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e8d95a17-c708-4ac1-ad10-68161f76fe2f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""cpu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7f0f285d-79a2-44a6-8f64-cc907994c3c1"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""cpu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -91,6 +133,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         // PlayerInput
         m_PlayerInput = asset.FindActionMap("PlayerInput", throwIfNotFound: true);
         m_PlayerInput_Move = m_PlayerInput.FindAction("Move", throwIfNotFound: true);
+        m_PlayerInput_cpu = m_PlayerInput.FindAction("cpu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -151,11 +194,13 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerInput;
     private IPlayerInputActions m_PlayerInputActionsCallbackInterface;
     private readonly InputAction m_PlayerInput_Move;
+    private readonly InputAction m_PlayerInput_cpu;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
         public PlayerInputActions(@PlayerInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerInput_Move;
+        public InputAction @cpu => m_Wrapper.m_PlayerInput_cpu;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -168,6 +213,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMove;
+                @cpu.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCpu;
+                @cpu.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCpu;
+                @cpu.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCpu;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -175,6 +223,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @cpu.started += instance.OnCpu;
+                @cpu.performed += instance.OnCpu;
+                @cpu.canceled += instance.OnCpu;
             }
         }
     }
@@ -191,5 +242,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     public interface IPlayerInputActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnCpu(InputAction.CallbackContext context);
     }
 }
