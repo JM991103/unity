@@ -13,8 +13,6 @@ public class BallSpwaner : MonoBehaviour
     float minY = -3.8f;
     float maxY = 3.8f;
 
-    public Action<bool> trueDead;
-
     private void Awake()
     {
         BallSpawn = ballSpawner();
