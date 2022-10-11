@@ -7,9 +7,19 @@ public class Cactus : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
 
+    bool move = true;
+
+    private void Start()
+    {
+        GameManager.Inst.Player.onDead += Move;
+    }
+
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
+        if (move)
+        {
+            transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
+        }
 
         if (transform.position.x < -10)
         {
@@ -17,4 +27,8 @@ public class Cactus : MonoBehaviour
         }
     }
 
+    void Move()
+    {
+        move = false;
+    }    
 }

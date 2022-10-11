@@ -123,52 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &80712590 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5934047847666127139, guid: a078cf570c7e67c40a0dc220f38ad393, type: 3}
-  m_PrefabInstance: {fileID: 4140716588852087417}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &80712592
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80712590}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 11.918926, y: -0.10061574}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25.314514, y: 3.223072}
-  m_EdgeRadius: 0
---- !u!114 &80712594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80712590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a0dbd4d792d9e4c95979fce9d4004b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollingSpeed: 7
-  widht: 3
---- !u!1001 &768447881
+--- !u!1001 &437746592
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -241,26 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3092a43cf046244083c2dfd2d036b25, type: 3}
---- !u!1 &811497413 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4596353390309760007, guid: a078cf570c7e67c40a0dc220f38ad393, type: 3}
-  m_PrefabInstance: {fileID: 4140716588852087417}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &811497415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811497413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a0dbd4d792d9e4c95979fce9d4004b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollingSpeed: 1
-  widht: 5.5
---- !u!1 &1844588365
+--- !u!1 &857043157
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,9 +204,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1844588368}
-  - component: {fileID: 1844588367}
-  - component: {fileID: 1844588366}
+  - component: {fileID: 857043160}
+  - component: {fileID: 857043159}
+  - component: {fileID: 857043158}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -278,21 +214,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1844588366
+--- !u!81 &857043158
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844588365}
+  m_GameObject: {fileID: 857043157}
   m_Enabled: 1
---- !u!20 &1844588367
+--- !u!20 &857043159
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844588365}
+  m_GameObject: {fileID: 857043157}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -329,13 +265,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1844588368
+--- !u!4 &857043160
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844588365}
+  m_GameObject: {fileID: 857043157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -344,7 +280,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4140716588852087417
+--- !u!1001 &1736885995
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -581,7 +517,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a078cf570c7e67c40a0dc220f38ad393, type: 3}
---- !u!1001 &8738634469034101446
+--- !u!1 &1736885996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4596353390309760007, guid: a078cf570c7e67c40a0dc220f38ad393, type: 3}
+  m_PrefabInstance: {fileID: 1736885995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1736885997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5934047847666127139, guid: a078cf570c7e67c40a0dc220f38ad393, type: 3}
+  m_PrefabInstance: {fileID: 1736885995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736885998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736885996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a0dbd4d792d9e4c95979fce9d4004b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollingSpeed: 1
+  widht: 5.5
+--- !u!114 &1736885999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736885997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a0dbd4d792d9e4c95979fce9d4004b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollingSpeed: 7
+  widht: 3
+--- !u!61 &1736886000
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736885997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 11.918926, y: -0.10061574}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25.314514, y: 3.223072}
+  m_EdgeRadius: 0
+--- !u!1001 &2109627786
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

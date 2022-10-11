@@ -31,6 +31,7 @@ public class BackGroundScrolling : MonoBehaviour
     private void Start()
     {
         endPoint = transform.position.x - widht;
+        GameManager.Inst.Player.onDead += ScrolStop;
     }
 
     private void Update()
@@ -45,4 +46,8 @@ public class BackGroundScrolling : MonoBehaviour
         }
     }
 
+    void ScrolStop()
+    {
+        scrollingSpeed = 0;
+    }
 }

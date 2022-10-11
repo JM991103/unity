@@ -8,19 +8,10 @@ public class Obstacle : MonoBehaviour
 
     public int Rand { get => Random.Range(0, 3); }
 
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         StartCoroutine(obstacle());
-    }
-
-    private void Update()
-    {
-
+        GameManager.Inst.Player.onDead += Stopcorutine;
     }
 
     IEnumerator obstacle()
@@ -30,5 +21,10 @@ public class Obstacle : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         Instantiate(cactus[Rand], transform.position, Quaternion.identity);
         }
+    }
+
+    void Stopcorutine()
+    {
+        StopAllCoroutines();
     }
 }
