@@ -71,5 +71,6 @@ public class Player : MonoBehaviour
         playerInput.PlayerInput.Disable();
         onDead?.Invoke();
         anim.SetBool("Die", true);
+        GameManager.Inst.Save();
     }
 }
