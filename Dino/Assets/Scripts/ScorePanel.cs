@@ -26,6 +26,16 @@ public class ScorePanel : MonoBehaviour
         }
     }
 
+    public float HiScore
+    {
+        get => hiScore;
+        set        {
+
+            hiScore = (int)value;
+            hiScoreText.text = $"Hi Score : {hiScore}";
+        }
+    }
+
     private void Awake()
     {
         scoreText = transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
@@ -50,8 +60,6 @@ public class ScorePanel : MonoBehaviour
         scoreStop = true;
         GameManager.Inst.Score = (int)score;
     }
-
-
 
 
 }

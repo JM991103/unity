@@ -16,12 +16,18 @@ public class Buttonclick : MonoBehaviour
     private void Start()
     {
         button.onClick.AddListener(ReStart);
+        button.gameObject.SetActive(false);
+        GameManager.Inst.Player.onDead += ResetButtonOn;
     }
 
     void ReStart()
     {
         // 현재 씬을 재시작
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
+    private void ResetButtonOn()
+    {
+        button.gameObject.SetActive(true);
     }
 }
